@@ -1,0 +1,16 @@
+rps_en_cours
+rps_termine
+profil
+message_prive
+notification
+staff
+reglement
+races
+magies
+annonces
+carte
+predef_un
+predef_deux
+predef_trois
+
+
