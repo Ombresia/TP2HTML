@@ -118,7 +118,6 @@ nav {
     height: 40px;
     position: fixed;
     z-index: 1;
-    
 }
 
 nav ul {
@@ -128,7 +127,7 @@ nav ul {
 
 nav ul li {
     list-style: none;
-       width: 10%;
+    width: 10%;
 }
 
 nav li:first-child {
@@ -148,9 +147,13 @@ nav ul li a:hover {
     background: #380003;
 }
 
-.co_deco_button  {
-     float: right;
-align-self: flex-end;
+.co_deco_button {
+    float: right;
+    align-self: flex-end;
+}
+
+.mobile-nav {
+    display: none;
 }
 
 
@@ -438,7 +441,7 @@ footer img:hover {
         RESPONSIVE : MEDIA QUERIES
 ***********************************************/
 
-@media only screen and (max-width:1220px) {
+@media only screen and (min-width:1220px) {
     aside a,
     aside h3,
     aside p {
@@ -533,14 +536,66 @@ footer img:hover {
     .col-s-12 {
         width: 100%;
     }
-    [class*="col-"] {
-        float: none;
-        padding: 0 15px;
-    }
     #menu-tab {
         display: none;
     }
     #membre_mobile {
         display: block;
+    }
+    h1 {
+        display: none;
+    }
+    .mobile-nav {
+        display: block;
+        background: #870001;
+    }
+    /*on enlève le float sur les liens du menu et on applique une largeur de 100% */
+    header li {
+        float: none;
+        width: 100%;
+        border-left: 0px solid #fff!important;
+        /*on élimine la bordure gauche*/
+        border-top: 1px solid #FFF;
+        list-style: none;
+    }
+    /*on justifie à gauche les liens */
+    .responsive-menu li a {
+        display: block;
+        height: 50px;
+        padding-left: 5px;
+        text-align: left;
+        width: 100%;
+        color: #fff;
+        text-decoration: none;
+        padding: 15px;
+    }
+    /*on rajoute du padding pour décoller le hamburger */
+    .menu-btn {
+        padding: 6px;
+    }
+    /*on style le hamburger*/
+    .menu-btn span {
+        display: block;
+        /*les span se placent les uns sous les autres*/
+        width: 50px;
+        /*largeur de la rayure*/
+        height: 3px;
+        /*hauteur de la rayure*/
+        margin: 8px 0;
+        /*on les sépare*/
+        background: rgb(255, 255, 255);
+        /*couleur des rayures*/
+        z-index: 99;
+    }
+    /*on cache le menu par défaut*/
+    .responsive-menu {
+        display: none;
+    }
+    /*on affiche le menu qd l'utilisateur clique sur le hamburger, on ajoute la classe expand en jQuery*/
+    .expand {
+        display: block !important;
+    }
+    .desktop_nav {
+        display: none;
     }
 }
